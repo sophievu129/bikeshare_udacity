@@ -9,3 +9,6 @@ Biker explorer that allows user to filter bikeshare data by month and day. User 
 bikeshare.py 
 ### Credits
 https://pandas.pydata.org/docs/
+### Author
+Bich Vu<br />
+https://github.com/sophievu129
