@@ -10,5 +10,6 @@ bikeshare.py
 ### Credits
 https://pandas.pydata.org/docs/
 ### Author
-Bich Vu<br />
-https://github.com/sophievu129
+Bich Vu <br />
+github: https://github.com/sophievu129 <br />
+email: vuthingocbich1209@gmail.com
