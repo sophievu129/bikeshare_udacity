@@ -1,17 +1,15 @@
->**Note**: Please **fork** the current Udacity repository so that you will have a **remote** repository in **your** Github account. Clone the remote repository to your local machine. Later, as a part of the project "Post your Work on Github", you will push your proposed changes to the remote repository in your Github account.
 
 ### Date created
-Include the date you created this project and README file.
-
+August 26th, 2023.
 ### Project Title
-Replace the Project Title
-
+Bikeshare Explorer
 ### Description
-Describe what your project is about and what it does
-
+Biker explorer that allows user to filter bikeshare data by month and day. User will get the information about most popular hour when people start traveling, most poplular start and end location, most popular trip. It will also show the total duration and average time traveling, as well as the count of each user type, gender and birth year.
 ### Files used
-Include the files used
-
+bikeshare.py 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+https://pandas.pydata.org/docs/
+### Author
+Bich Vu <br />
+github: https://github.com/sophievu129 <br />
+email: vuthingocbich1209@gmail.com
