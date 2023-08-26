@@ -252,7 +252,9 @@ def user_stats(df):
 def main():
     """Bikeshare explorer application."""
     global data_filter
+    i = 0
     while True:
+        i += 1
         start_time = time.time()
         city, month, day, data_filter = get_filters()
         df = load_data(city, month, day)
@@ -260,8 +262,8 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
-        print("\nThis round took %s seconds." % (time.time() - start_time))
-        
+        print(f"\nRound {i} took %s seconds." % (time.time() - start_time))
+
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
