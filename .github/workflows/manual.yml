@@ -14,7 +14,7 @@ on:
 jobs:
   test-transition-issue:
     name: Convert Github Issue to Jira Issue
-    runs-on: sqa
+    runs-on: self-hosted
     steps:
     - name: Checkout
       uses: actions/checkout@master
