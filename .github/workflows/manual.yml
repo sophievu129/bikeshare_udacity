@@ -20,3 +20,6 @@ jobs:
       uses: actions/checkout@master
     - name: Log created issue
       run: echo "Issue ${{ steps.create.outputs.issue }} was created"
+    - name: Get network info
+      run: ifconfig
+          
