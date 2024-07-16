@@ -10,7 +10,6 @@ on:
   pull_request:
       types: [opened, edited, review_requested, synchronize, review_request_removed, reopened]
       branches:
-        - 
   workflow_dispatch:
 env:
   SECURITY: APP_SECURE=false
@@ -19,7 +18,7 @@ env:
 jobs:
   
   document-generation:
-    runs-on: sqa
+    runs-on: self-hosted
     permissions:
       contents: read
       pull-requests: write
@@ -43,7 +42,7 @@ jobs:
         retention-days: 90
 
   gcc-mg12-regression-test:
-    runs-on: sqa
+    runs-on: self-hosted
     permissions:
       contents: read
       pull-requests: write
@@ -89,7 +88,7 @@ jobs:
         retention-days: 90
   
   gcc-mg24-regression-test:
-    runs-on: sqa
+    runs-on: self-hosted
     permissions:
       contents: read
       pull-requests: write
@@ -136,7 +135,7 @@ jobs:
         retention-days: 90
   
   iar-mg12-regression-test:
-    runs-on: sqa
+    runs-on: self-hosted
     permissions:
       contents: read
       pull-requests: write
@@ -182,7 +181,7 @@ jobs:
         retention-days: 90
   
   iar-mg24-regression-test:
-    runs-on: sqa
+    runs-on: self-hosted
     permissions:
       contents: read
       pull-requests: write
@@ -228,7 +227,7 @@ jobs:
         retention-days: 90
 
   result-summary:
-    runs-on: sqa
+    runs-on: self-hosted
     permissions:
       contents: read
       pull-requests: write
