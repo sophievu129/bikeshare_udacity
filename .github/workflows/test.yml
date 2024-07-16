@@ -43,7 +43,7 @@ jobs:
         retention-days: 90
 
   gcc-mg12-regression-test:
-  runs-on: sqa
+    runs-on: sqa
     permissions:
       contents: read
       pull-requests: write
