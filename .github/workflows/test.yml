@@ -16,8 +16,8 @@ env:
   COMMAND: all
   COMPONENT: all
 jobs:
-  
-  document-generation:
+  job1:
+    name: Generate Documents
     runs-on: self-hosted
     permissions:
       contents: read
@@ -41,7 +41,8 @@ jobs:
         warn: Output a warning but do not fail the action
         retention-days: 90
 
-  gcc-mg12-regression-test:
+  job2:
+    name: GCC-MG12 regression test
     runs-on: self-hosted
     permissions:
       contents: read
@@ -87,7 +88,8 @@ jobs:
         warn: Output a warning but do not fail the action
         retention-days: 90
   
-  gcc-mg24-regression-test:
+  job3:
+    name: GCC-MG24 regression test
     runs-on: self-hosted
     permissions:
       contents: read
@@ -134,7 +136,8 @@ jobs:
         warn: Output a warning but do not fail the action
         retention-days: 90
   
-  iar-mg12-regression-test:
+  job4:
+    name: IAR-MG12 regression test
     runs-on: self-hosted
     permissions:
       contents: read
@@ -180,7 +183,8 @@ jobs:
         warn: Output a warning but do not fail the action
         retention-days: 90
   
-  iar-mg24-regression-test:
+  job5:
+    name: IAR-MG24 regression test
     runs-on: self-hosted
     permissions:
       contents: read
@@ -226,7 +230,8 @@ jobs:
         warn: Output a warning but do not fail the action
         retention-days: 90
 
-  result-summary:
+  job6:
+    name: Summary Test Result
     runs-on: self-hosted
     permissions:
       contents: read
