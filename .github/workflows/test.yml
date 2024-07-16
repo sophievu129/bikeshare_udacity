@@ -17,7 +17,7 @@ env:
   COMMAND: all
   COMPONENT: all
 jobs:
-  my_first_job:
+  job1:
     name: Generate Documents
     runs-on: self-hosted
     permissions:
@@ -42,7 +42,9 @@ jobs:
         warn: Output a warning but do not fail the action
         retention-days: 90
 
-  my_second_job:
+  job2:
+    if: ${{ always() }}
+    needs: [job1]
     name: GCC-MG12 regression test
     runs-on: self-hosted
     permissions:
@@ -89,7 +91,9 @@ jobs:
         warn: Output a warning but do not fail the action
         retention-days: 90
   
-  my_third_job:
+  job3:
+    if: ${{ always() }}
+    needs: [job1, job2]
     name: GCC-MG24 regression test
     runs-on: self-hosted
     permissions:
@@ -137,7 +141,9 @@ jobs:
         warn: Output a warning but do not fail the action
         retention-days: 90
   
-  my_fourth_job:
+  job4:
+    if: ${{ always() }}
+    needs: [job1, job2, job3]
     name: IAR-MG12 regression test
     runs-on: self-hosted
     permissions:
@@ -184,7 +190,9 @@ jobs:
         warn: Output a warning but do not fail the action
         retention-days: 90
   
-  my_fifth_job:
+  job5:
+    if: ${{ always() }}
+    needs: [job1, job2, job3, job4]    
     name: IAR-MG24 regression test
     runs-on: self-hosted
     permissions:
@@ -231,7 +239,9 @@ jobs:
         warn: Output a warning but do not fail the action
         retention-days: 90
 
-  my_sixth_job:
+  job6:
+    if: ${{ always() }}
+    needs: [job1, job2, job3, job4, job5] 
     name: Summary Test Result
     runs-on: self-hosted
     permissions:
