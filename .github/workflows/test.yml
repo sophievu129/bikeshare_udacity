@@ -10,13 +10,14 @@ on:
   pull_request:
       types: [opened, edited, review_requested, synchronize, review_request_removed, reopened]
       branches:
+        master
   workflow_dispatch:
 env:
   SECURITY: APP_SECURE=false
   COMMAND: all
   COMPONENT: all
 jobs:
-  job1:
+  my_first_job:
     name: Generate Documents
     runs-on: self-hosted
     permissions:
@@ -41,7 +42,7 @@ jobs:
         warn: Output a warning but do not fail the action
         retention-days: 90
 
-  job2:
+  my_second_job:
     name: GCC-MG12 regression test
     runs-on: self-hosted
     permissions:
@@ -88,7 +89,7 @@ jobs:
         warn: Output a warning but do not fail the action
         retention-days: 90
   
-  job3:
+  my_third_job:
     name: GCC-MG24 regression test
     runs-on: self-hosted
     permissions:
@@ -136,7 +137,7 @@ jobs:
         warn: Output a warning but do not fail the action
         retention-days: 90
   
-  job4:
+  my_fourth_job:
     name: IAR-MG12 regression test
     runs-on: self-hosted
     permissions:
@@ -183,7 +184,7 @@ jobs:
         warn: Output a warning but do not fail the action
         retention-days: 90
   
-  job5:
+  my_fifth_job:
     name: IAR-MG24 regression test
     runs-on: self-hosted
     permissions:
@@ -230,7 +231,7 @@ jobs:
         warn: Output a warning but do not fail the action
         retention-days: 90
 
-  job6:
+  my_sixth_job:
     name: Summary Test Result
     runs-on: self-hosted
     permissions:
