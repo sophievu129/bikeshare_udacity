@@ -54,6 +54,7 @@ jobs:
       if: github.event_name	== 'pull_request'
     - name: Remove Libraries
       run: rm -rf EFR32_ICE60730_Libraries
+    - run: echo $SECURITY
     - name: Create directory for Libraries
       run: mkdir EFR32_ICE60730_Libraries
     - name: Generate Documents with Doxygen
