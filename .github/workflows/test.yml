@@ -12,6 +12,12 @@ on:
       branches:
         master
   workflow_dispatch:
+    inputs:
+      job1_branch: 
+        description: 'Branch to test'
+        type: string
+        default: 'iec_efr32'
+      
 env:
   SECURITY: APP_SECURE=false
   COMMAND: all
@@ -23,11 +29,12 @@ jobs:
     permissions:
       contents: read
       pull-requests: write
-    env: 
-      HOST_IP: 192.168.1.69
     steps:
     - name: Checkout
       uses: actions/checkout@v4.1.7
+      with:
+        ref: inputs.job1_branch
+      if: github.event_name	== 'workflow_dispatch'
     - name: Remove Libraries
       run: rm -rf EFR32_ICE60730_Libraries
     - name: Create directory for Libraries
