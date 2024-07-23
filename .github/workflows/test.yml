@@ -13,13 +13,27 @@ on:
         master
   workflow_dispatch:
     inputs:
-      job1_branch: 
+      branch: 
         description: 'Branch to test'
         type: string
         default: 'iec_efr32'
+
+      job1_serialnum:
+        description: 'Serial number of target board to test for GCC MG12'
+        type: string
+        default: '440111030'
+      job1_security:
+        description: 'NON_SECURE_EN= true "CRC_32=1%20NON_SECURE_EN=false%20N_CRC_DEBUG=1%20APP_SECURE=false"'
+        type: string
+        default: 'APP_SECURE=false'
+      
+      job6_aft_test_command:
+        description: 'Command to run get result'
+        type: string
+        default: 'get_result.py --rounds $ROUNDS --jenkinURL1 $TEST_JOB'
       
 env:
-  SECURITY: APP_SECURE=false
+  SECURITY:"${{ github.event.inputs.job1_security }}"
   COMMAND: all
   COMPONENT: all
 jobs:
@@ -33,7 +47,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4.1.7
       with:
-        ref: "${{ github.event.inputs.job1_branch }}"
+        ref: "${{ github.event.inputs.branch }}"
       if: github.event_name	== 'workflow_dispatch'
     - name: Checkout
       uses: actions/checkout@v4.1.7
@@ -68,6 +82,12 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4.1.7
+      with:
+        ref: "${{ github.event.inputs.branch }}"
+      if: github.event_name	== 'workflow_dispatch'
+    - name: Checkout
+      uses: actions/checkout@v4.1.7
+      if: github.event_name	== 'pull_request'
     - name: Check working directory
       run: 
         pwd
@@ -118,6 +138,12 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4.1.7
+      with:
+        ref: "${{ github.event.inputs.branch }}"
+      if: github.event_name	== 'workflow_dispatch'
+    - name: Checkout
+      uses: actions/checkout@v4.1.7
+      if: github.event_name	== 'pull_request'
     - name: Check working directory
       run: 
         pwd
@@ -168,6 +194,12 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4.1.7
+      with:
+        ref: "${{ github.event.inputs.branch }}"
+      if: github.event_name	== 'workflow_dispatch'
+    - name: Checkout
+      uses: actions/checkout@v4.1.7
+      if: github.event_name	== 'pull_request'
     - name: Check working directory
       run: 
         pwd
@@ -217,6 +249,12 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4.1.7
+      with:
+        ref: "${{ github.event.inputs.branch }}"
+      if: github.event_name	== 'workflow_dispatch'
+    - name: Checkout
+      uses: actions/checkout@v4.1.7
+      if: github.event_name	== 'pull_request'
     - name: Check working directory
       run: 
         pwd
@@ -261,6 +299,12 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4.1.7
+      with:
+        ref: "${{ github.event.inputs.branch }}"
+      if: github.event_name	== 'workflow_dispatch'
+    - name: Checkout
+      uses: actions/checkout@v4.1.7
+      if: github.event_name	== 'pull_request'
   
   
           
