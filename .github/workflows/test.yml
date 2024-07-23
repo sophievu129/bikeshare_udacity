@@ -33,7 +33,7 @@ on:
         default: 'get_result.py --rounds $ROUNDS --jenkinURL1 $TEST_JOB'
       
 env:
-  SECURITY:"${{ github.event.inputs.job1_security }}"
+  SECURITY: "${{ github.event.inputs.job1_security }}"
   COMMAND: all
   COMPONENT: all
 jobs:
