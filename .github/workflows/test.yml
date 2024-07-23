@@ -35,6 +35,9 @@ jobs:
       with:
         ref: "${{ github.event.inputs.job1_branch }}"
       if: github.event_name	== 'workflow_dispatch'
+    - name: Checkout
+      uses: actions/checkout@v4.1.7
+      if: github.event_name	== 'pull_request'
     - name: Remove Libraries
       run: rm -rf EFR32_ICE60730_Libraries
     - name: Create directory for Libraries
